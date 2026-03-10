@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bello AI | L'IA vocale qui booste votre pizzeria</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-white text-slate-900 font-sans">
+
+    <nav class="flex justify-between items-center p-6 container mx-auto">
+        <div class="text-2xl font-bold italic text-orange-600">BELLO.ai</div>
+        <div class="hidden md:flex gap-8 font-medium">
+            <a href="#fonctionnement" class="hover:text-orange-600">Fonctionnement</a>
+            <a href="#tarifs" class="hover:text-orange-600">Tarifs</a>
+        </div>
+        <a href="#contact" class="bg-orange-600 text-white px-6 py-2 rounded-full font-bold">Contact</a>
+    </nav>
+
+    <header class="container mx-auto px-6 py-16 text-center">
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-6">Ne perdez plus jamais <br><span class="text-orange-600">une commande.</span></h1>
+        <p class="text-xl text-slate-600 mb-10 max-w-2xl mx-auto">Bello est l'assistant vocal intelligent qui prend vos commandes au téléphone et les affiche instantanément sur votre écran cuisine.</p>
+        
+        
+        
+        <div class="mt-8">
+            <button class="bg-slate-900 text-white px-10 py-4 rounded-xl text-lg font-bold hover:bg-slate-800">Voir la démo en live</button>
+        </div>
+    </header>
+
+    <section id="fonctionnement" class="py-20 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16">Comment ça marche ?</h2>
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl"><i class="fas fa-phone"></i></div>
+                    <h3 class="text-xl font-bold mb-3">1. Bello répond</h3>
+                    <p class="text-slate-600">Une voix humaine naturelle traite l'appel, gère les stocks et suggère des desserts.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl"><i class="fas fa-database"></i></div>
+                    <h3 class="text-xl font-bold mb-3">2. Supabase synchronise</h3>
+                    <p class="text-slate-600">La commande est traitée et enregistrée dans votre base de données en quelques millisecondes.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl"><i class="fas fa-tablet-alt"></i></div>
+                    <h3 class="text-xl font-bold mb-3">3. Cuisine en direct</h3>
+                    <p class="text-slate-600">La pizza s'affiche sur votre iPad en temps réel. Plus besoin de saisie manuelle.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tarifs" class="py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-16">Des tarifs simples et rentables</h2>
+            <div class="max-w-md mx-auto bg-slate-900 text-white p-8 rounded-3xl">
+                <div class="text-2xl font-bold mb-4">Pack Performance</div>
+                <div class="text-5xl font-extrabold mb-6">59€<span class="text-lg font-light text-slate-400">/mois</span></div>
+                <ul class="text-left space-y-4 mb-8">
+                    <li><i class="fas fa-check text-orange-500 mr-2"></i> Agent vocal 24/7</li>
+                    <li><i class="fas fa-check text-orange-500 mr-2"></i> Interface iPad temps réel</li>
+                    <li><i class="fas fa-check text-orange-500 mr-2"></i> Gestion des stocks</li>
+                    <li><i class="fas fa-check text-orange-500 mr-2"></i> +1€ par commande validée</li>
+                </ul>
+                <button class="w-full bg-orange-600 py-4 rounded-xl font-bold">Commencer maintenant</button>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
