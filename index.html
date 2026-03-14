@@ -227,33 +227,33 @@
                 <h2 class="text-4xl font-bold text-slate-900 mb-4">Démarrez avec SAIOS</h2>
                 <p class="text-slate-500">Complétez ce formulaire, notre équipe vous recontactera sous 48h.</p>
             </div>
-            <form class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-slate-50 p-8 md:p-12 rounded-[40px] border border-slate-100">
+            <form id="contact-form" class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-slate-50 p-8 md:p-12 rounded-[40px] border border-slate-100">
                 <div class="flex flex-col gap-2">
                     <label class="font-semibold text-sm ml-2">Nom</label>
-                    <input type="text" placeholder="Dupont" class="px-6 py-4 rounded-2xl border border-slate-200 focus:border-blue-600 outline-none transition">
+                    <input type="text" name="nom" placeholder="Dupont" class="px-6 py-4 rounded-2xl border border-slate-200 focus:border-blue-600 outline-none transition">
                 </div>
                 <div class="flex flex-col gap-2">
                     <label class="font-semibold text-sm ml-2">Prénom</label>
-                    <input type="text" placeholder="Jean" class="px-6 py-4 rounded-2xl border border-slate-200 focus:border-blue-600 outline-none transition">
+                    <input type="text" name="prenom" placeholder="Jean" class="px-6 py-4 rounded-2xl border border-slate-200 focus:border-blue-600 outline-none transition">
                 </div>
                 <div class="flex flex-col gap-2">
                     <label class="font-semibold text-sm ml-2">Société</label>
-                    <input type="text" placeholder="Ma Société SAS" class="px-6 py-4 rounded-2xl border border-slate-200 focus:border-blue-600 outline-none transition">
+                    <input type="text" name="societe" placeholder="Ma Société SAS" class="px-6 py-4 rounded-2xl border border-slate-200 focus:border-blue-600 outline-none transition">
                 </div>
                 <div class="flex flex-col gap-2">
                     <label class="font-semibold text-sm ml-2">Adresse mail *</label>
-                    <input type="email" required placeholder="contact@exemple.com" class="px-6 py-4 rounded-2xl border border-slate-200 focus:border-blue-600 outline-none transition shadow-sm">
+                    <input type="email" name="email" required placeholder="contact@exemple.com" class="px-6 py-4 rounded-2xl border border-slate-200 focus:border-blue-600 outline-none transition shadow-sm">
                 </div>
                 <div class="flex flex-col gap-2">
                     <label class="font-semibold text-sm ml-2">Numéro de téléphone</label>
-                    <input type="tel" placeholder="06 00 00 00 00" class="px-6 py-4 rounded-2xl border border-slate-200 focus:border-blue-600 outline-none transition">
+                    <input type="tel" name="telephone" placeholder="06 00 00 00 00" class="px-6 py-4 rounded-2xl border border-slate-200 focus:border-blue-600 outline-none transition">
                 </div>
                 <div class="flex flex-col gap-2">
                     <label class="font-semibold text-sm ml-2">Type de service / métier</label>
-                    <input type="text" placeholder="ex: Restaurant, Coiffeur..." class="px-6 py-4 rounded-2xl border border-slate-200 focus:border-blue-600 outline-none transition">
+                    <input type="text" name="service" placeholder="ex: Restaurant, Coiffeur..." class="px-6 py-4 rounded-2xl border border-slate-200 focus:border-blue-600 outline-none transition">
                 </div>
                 <div class="md:col-span-2 mt-4">
-                    <button type="submit" class="w-full brand-gradient text-white py-5 rounded-2xl font-bold text-xl transition-all duration-300 shadow-xl">
+                    <button type="submit" id="submit-btn" class="w-full brand-gradient text-white py-5 rounded-2xl font-bold text-xl transition-all duration-300 shadow-xl">
                         Envoyer ma demande
                     </button>
                 </div>
@@ -264,6 +264,35 @@
     <footer class="py-12 text-center text-slate-400 text-sm border-t border-slate-100">
         <p>© 2026 SAIOS. Tous droits réservés.</p>
     </footer>
+
+    <script>
+      const form = document.getElementById('contact-form');
+      const btn = document.getElementById('submit-btn');
+
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        btn.disabled = true;
+        btn.innerText = "Envoi en cours...";
+        
+        const formData = new FormData(form);
+        // REMPLACE 'TON_URL_SCRIPT_GOOGLE' PAR TON URL REELLE
+        fetch('https://script.google.com/macros/s/AKfycbwkYg7PuEiitmTXfNd-PRQz4HwlTLz-9s5F2KEHbgD2Do4OZ9F7I3cP6NQoc_4xRe6VlA/exec', {
+          method: 'POST',
+          body: formData
+        })
+        .then(res => {
+            alert('Merci ! Votre demande a été envoyée avec succès.');
+            form.reset();
+            btn.disabled = false;
+            btn.innerText = "Envoyer ma demande";
+        })
+        .catch(err => {
+            alert('Une erreur est survenue lors de l\'envoi. Veuillez réessayer.');
+            btn.disabled = false;
+            btn.innerText = "Envoyer ma demande";
+        });
+      });
+    </script>
 
 </body>
 </html>
